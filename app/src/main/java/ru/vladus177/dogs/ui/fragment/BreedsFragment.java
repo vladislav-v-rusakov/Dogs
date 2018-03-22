@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import ru.vladus177.dogs.R;
 import ru.vladus177.dogs.databinding.FragmentBreedsBinding;
 import ru.vladus177.dogs.databinding.ItemBreedBinding;
@@ -87,7 +88,7 @@ public class BreedsFragment extends Fragment {
 
 
     private void setupListAdapter() {
-        ListView listView =  mFragmentBreedsBinding.breedsList;
+        ListView listView = mFragmentBreedsBinding.breedsList;
 
         mListAdapter = new BreedsAdapter(
                 new ArrayList<String>(0),
@@ -97,7 +98,7 @@ public class BreedsFragment extends Fragment {
     }
 
     private void setupRefreshLayout() {
-        ListView listView =  mFragmentBreedsBinding.breedsList;
+        ListView listView = mFragmentBreedsBinding.breedsList;
         final ScrollChildSwipeRefreshLayout swipeRefreshLayout = mFragmentBreedsBinding.refreshLayout;
         swipeRefreshLayout.setColorSchemeColors(
                 ContextCompat.getColor(getActivity(), R.color.colorPrimary),
@@ -110,7 +111,8 @@ public class BreedsFragment extends Fragment {
 
     public static class BreedsAdapter extends BaseAdapter {
 
-        @Nullable private BreedItemNavigator mBreedItemNavigator;
+        @Nullable
+        private BreedItemNavigator mBreedItemNavigator;
 
         private List<String> mBreeds;
 

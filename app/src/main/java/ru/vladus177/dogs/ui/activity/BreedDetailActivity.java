@@ -75,7 +75,7 @@ public class BreedDetailActivity extends BaseActivity implements BreedsActivityN
 
     @NonNull
     private BreedDetailFragment findOrCreateViewFragment() {
-        // Get the requested task id
+        // Get the requested breed
         String breed = getIntent().getStringExtra(EXTRA_BREED);
 
         BreedDetailFragment breedDetailFragment = (BreedDetailFragment) getSupportFragmentManager()

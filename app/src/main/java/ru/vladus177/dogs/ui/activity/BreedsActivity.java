@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import android.support.v7.widget.Toolbar;
+
 import ru.vladus177.dogs.R;
 import ru.vladus177.dogs.ui.BreedItemNavigator;
 import ru.vladus177.dogs.ui.BreedsActivityNavigator;
@@ -14,7 +15,7 @@ import ru.vladus177.dogs.util.ActivityUtils;
 import ru.vladus177.dogs.viewModel.BreedsViewModel;
 import ru.vladus177.dogs.viewModel.ViewModelHolder;
 
-public class BreedsActivity extends BaseActivity implements BreedItemNavigator, BreedsActivityNavigator{
+public class BreedsActivity extends BaseActivity implements BreedItemNavigator, BreedsActivityNavigator {
 
     public static final String BREEDS_VIEWMODEL_TAG = "BREEDS_VIEWMODEL_TAG";
 

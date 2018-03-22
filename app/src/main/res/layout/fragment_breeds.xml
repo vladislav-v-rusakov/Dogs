@@ -25,9 +25,9 @@
 
         <ListView
             android:id="@+id/breeds_list"
-            app:itemsList="@{viewmodel.items}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:itemsList="@{viewmodel.items}" />
 
     </ru.vladus177.dogs.ui.ScrollChildSwipeRefreshLayout>
 </layout>

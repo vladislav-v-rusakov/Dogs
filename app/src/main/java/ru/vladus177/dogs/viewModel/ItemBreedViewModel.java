@@ -15,7 +15,7 @@ public class ItemBreedViewModel extends BaseObservable {
     @Nullable
     private WeakReference<BreedItemNavigator> mNavigator;
 
-    public ItemBreedViewModel(String breed, Context context){
+    public ItemBreedViewModel(String breed, Context context) {
         this.breed = breed;
         this.context = context;
     }
@@ -30,7 +30,7 @@ public class ItemBreedViewModel extends BaseObservable {
 
     }
 
-    public void onItemClick(){
+    public void onItemClick() {
         if (mNavigator != null) {
             mNavigator.get().openBreedDetails(breed);
         }

@@ -8,14 +8,18 @@ import java.util.Map;
 
 public class BreedsResponse {
 
-    @SerializedName("status") private String status;
+    @SerializedName("status")
+    private String status;
 
-    @SerializedName("message") private Map<String, List<String>> message;
+    @SerializedName("message")
+    private Map<String, List<String>> message;
 
     public BreedsResponse(String success, Map<String, List<String>> message) {
     }
 
-    public List<String> getBreedList () { return new ArrayList<>(message.keySet());}
+    public List<String> getBreedList() {
+        return new ArrayList<>(message.keySet());
+    }
 
 
     public void setMessage(Map<String, List<String>> message) {

@@ -41,7 +41,6 @@ public class BreedDetailFragment extends Fragment {
     private ImageAdapter mAdapter;
 
 
-
     public static BreedDetailFragment newInstance(String breed) {
 
         Bundle arguments = new Bundle();
@@ -82,13 +81,13 @@ public class BreedDetailFragment extends Fragment {
         recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
-        mAdapter = new ImageAdapter( new ArrayList<String>(0));
+        mAdapter = new ImageAdapter(new ArrayList<String>(0));
         recyclerView.setAdapter(mAdapter);
 
     }
 
     private void setupRefreshLayout() {
-        RecyclerView recyclerView =  mFragmentBreedDetailBinding.recycler;
+        RecyclerView recyclerView = mFragmentBreedDetailBinding.recycler;
         final ScrollChildSwipeRefreshLayout swipeRefreshLayout = mFragmentBreedDetailBinding.refreshLayout;
         swipeRefreshLayout.setColorSchemeColors(
                 ContextCompat.getColor(getActivity(), R.color.colorPrimary),
@@ -98,6 +97,7 @@ public class BreedDetailFragment extends Fragment {
         // Set the scrolling view in the custom SwipeRefreshLayout.
         swipeRefreshLayout.setScrollUpChild(recyclerView);
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -156,6 +156,7 @@ public class BreedDetailFragment extends Fragment {
             mImages = images;
             notifyDataSetChanged();
         }
+
         public void replaceData(List<String> images) {
             setList(images);
         }
@@ -167,7 +168,7 @@ public class BreedDetailFragment extends Fragment {
 
 
         class ImageHolder extends RecyclerView.ViewHolder {
-           ImageView image;
+            ImageView image;
 
             ImageHolder(View itemView) {
                 super(itemView);

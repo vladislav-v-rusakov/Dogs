@@ -23,7 +23,6 @@ import ru.vladus177.dogs.ui.BreedsActivityNavigator;
 /**
  * /**
  * Exposes the data to be used in the breed detail screen.
- *
  */
 
 public class BreedDetailViewModel extends Observable {
@@ -86,6 +85,7 @@ public class BreedDetailViewModel extends Observable {
         setChanged();
         notifyObservers();
     }
+
     public void onRefresh() {
         dataLoading.set(true);
         fetchBreedImages();

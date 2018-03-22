@@ -12,7 +12,8 @@ public class ViewModelHolder<VM> extends Fragment {
 
     private VM mViewModel;
 
-    public ViewModelHolder() { }
+    public ViewModelHolder() {
+    }
 
     public static <M> ViewModelHolder createContainer(@NonNull M viewModel) {
         ViewModelHolder<M> viewModelContainer = new ViewModelHolder<>();
@@ -26,7 +27,8 @@ public class ViewModelHolder<VM> extends Fragment {
         setRetainInstance(true);
     }
 
-    @Nullable public VM getViewmodel() {
+    @Nullable
+    public VM getViewmodel() {
         return mViewModel;
     }
 

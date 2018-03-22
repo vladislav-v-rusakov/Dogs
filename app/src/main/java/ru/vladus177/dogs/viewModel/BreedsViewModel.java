@@ -6,6 +6,7 @@ import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableList;
 import android.support.annotation.NonNull;
+
 import java.util.List;
 import java.util.Observable;
 
@@ -22,7 +23,6 @@ import ru.vladus177.dogs.ui.BreedsActivityNavigator;
 
 /**
  * Exposes the data to be used in the dog breeds list screen.
- *
  */
 
 public class BreedsViewModel extends Observable {
@@ -58,13 +58,15 @@ public class BreedsViewModel extends Observable {
                 .subscribeOn(mApp.subscribeScheduler())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<BreedsResponse>() {
-                    @Override public void accept(BreedsResponse breedResponse) throws Exception {
+                    @Override
+                    public void accept(BreedsResponse breedResponse) throws Exception {
                         updateBreedsList(breedResponse.getBreedList());
                         dataLoading.set(false);
 
                     }
                 }, new Consumer<Throwable>() {
-                    @Override public void accept(Throwable throwable) throws Exception {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
                         onError(mContext.getResources().getString(R.string.loading_error));
                         dataLoading.set(false);
                     }

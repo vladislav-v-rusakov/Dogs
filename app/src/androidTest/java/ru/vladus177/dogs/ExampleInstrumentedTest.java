@@ -37,6 +37,7 @@ public class ExampleInstrumentedTest {
     public void setup() {
         testApi = new MockApiForTests();
     }
+
     @Test
     public void useAppContext() throws Exception {
         // Context of the app under test.
@@ -51,39 +52,42 @@ public class ExampleInstrumentedTest {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<DogImageResponse>() {
-                    @Override public void accept(DogImageResponse imageResponse) throws Exception {
+                    @Override
+                    public void accept(DogImageResponse imageResponse) throws Exception {
                         assertEquals(imageResponse, Arrays.asList("image1", "image2", "image3", "image4"));
                     }
                 }, new Consumer<Throwable>() {
-                    @Override public void accept(Throwable throwable) throws Exception {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
 
                     }
                 });
     }
 
     @Test
-    public void loadAllOfTheBreeds(){
+    public void loadAllOfTheBreeds() {
         testApi.getCategories()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<BreedsResponse>() {
-                    @Override public void accept(BreedsResponse breedResponse) throws Exception {
-                        assertEquals(breedResponse.getStatus(),"success");
-                        assertEquals(breedResponse.getBreedList().size(),4);
+                    @Override
+                    public void accept(BreedsResponse breedResponse) throws Exception {
+                        assertEquals(breedResponse.getStatus(), "success");
+                        assertEquals(breedResponse.getBreedList().size(), 4);
 
                     }
                 }, new Consumer<Throwable>() {
-                    @Override public void accept(Throwable throwable) throws Exception {
+                    @Override
+                    public void accept(Throwable throwable) throws Exception {
 
                     }
                 });
     }
 
-    class MockApiForTests  {
+    class MockApiForTests {
 
-        private  Map<String, List<String>> createMap()
-        {
-            Map<String,List<String>> map = new HashMap<>();
+        private Map<String, List<String>> createMap() {
+            Map<String, List<String>> map = new HashMap<>();
             map.put("akita", new ArrayList<String>(0));
             map.put("beagle", new ArrayList<String>(0));
             map.put("borzoi", new ArrayList<String>(0));
@@ -91,14 +95,14 @@ public class ExampleInstrumentedTest {
             return map;
         }
 
-        Observable<DogImageResponse> getAnimalImages()  {
+        Observable<DogImageResponse> getAnimalImages() {
             List<String> images = Arrays.asList("image1", "image2", "image3", "image4");
             return Observable.just(new DogImageResponse(images));
 
         }
 
-        Observable<BreedsResponse>  getCategories() {
-             Map<String, List<String>> message = createMap();
+        Observable<BreedsResponse> getCategories() {
+            Map<String, List<String>> message = createMap();
             return Observable.just(new BreedsResponse("success", message));
 
         }
