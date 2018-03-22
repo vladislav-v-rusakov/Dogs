@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="view"
+            type="ru.vladus177.dogs.ui.fragment.BreedDetailFragment" />
+
+        <variable
+            name="viewmodel"
+            type="ru.vladus177.dogs.viewModel.BreedDetailViewModel" />
+    </data>
+
+    <ru.vladus177.dogs.ui.ScrollChildSwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{viewmodel::onRefresh}"
+        app:refreshing="@{viewmodel.dataLoading}">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:imageList="@{viewmodel.images}">
+
+        </android.support.v7.widget.RecyclerView>
+    </ru.vladus177.dogs.ui.ScrollChildSwipeRefreshLayout>
+
+</layout>
