@@ -75,7 +75,7 @@ public class BreedsViewModel extends Observable {
         compositeDisposable.add(disposable);
     }
 
-    private void updateBreedsList(List<String> breeds) {
+    public void updateBreedsList(List<String> breeds) {
         items.clear();
         items.addAll(breeds);
         setChanged();
