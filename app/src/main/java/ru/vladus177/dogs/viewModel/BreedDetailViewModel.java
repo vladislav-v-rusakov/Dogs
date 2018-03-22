@@ -81,6 +81,7 @@ public class BreedDetailViewModel extends Observable {
 
 
     private void updateImageList(List<String> imageList) {
+        images.clear();
         images.addAll(imageList);
         setChanged();
         notifyObservers();

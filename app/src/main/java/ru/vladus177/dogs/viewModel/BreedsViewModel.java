@@ -76,6 +76,7 @@ public class BreedsViewModel extends Observable {
     }
 
     private void updateBreedsList(List<String> breeds) {
+        items.clear();
         items.addAll(breeds);
         setChanged();
         notifyObservers();
