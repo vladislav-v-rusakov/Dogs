@@ -4,7 +4,7 @@ Simple application that uses the DogAPI(https://dog.ceo/dog-api/) to pull down a
 
 # Libraries in project
 
-   `compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
    
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     
@@ -30,5 +30,5 @@ Simple application that uses the DogAPI(https://dog.ceo/dog-api/) to pull down a
     
     compile 'com.google.guava:guava:23.5-android'
     
-    compile 'com.squareup.picasso:picasso:2.5.2'`
+    compile 'com.squareup.picasso:picasso:2.5.2'
     
